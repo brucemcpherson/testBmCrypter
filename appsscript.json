@@ -1,0 +1,27 @@
+{
+  "timeZone": "Europe/London",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "bmCrypter",
+        "libraryId": "1cBN2gAhvhG4vQTPL04V363DaL19TbHRMydR1pVfn2Wju6PuypdukZAFK",
+        "version": "7"
+      },
+      {
+        "userSymbol": "bmLibraryReporter",
+        "libraryId": "1D_lWK-jU53wxMA2-NxSjiyu7Uze_GDDqBKTsQnCgPhyUmmSLv0bfTNPX",
+        "version": "14"
+      },
+      {
+        "userSymbol": "bmPreFiddler",
+        "libraryId": "13JUFGY18RHfjjuKmIRRfvmGlCYrEkEtN6uUm-iLUcxOUFRJD-WBX-tkR",
+        "version": "30"
+      }
+    ]
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets"
+  ]
+}
