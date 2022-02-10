@@ -48,6 +48,14 @@ const runnerEncrypt = () => {
       get renameAs() {
         return 'encrypted-' + this.name
       }
+    }, {
+      name: 'caps',
+      copy: ['*'],
+      encrypt: ['Cap Billions'],
+      generatePrivateKey(masterId, sheetName, columnName) {
+        // in this case we'll just have a fixed password
+        return 'cap password'
+      }
     }]
   }]
 
