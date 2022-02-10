@@ -7,7 +7,8 @@
       {
         "userSymbol": "bmCrypter",
         "libraryId": "1cBN2gAhvhG4vQTPL04V363DaL19TbHRMydR1pVfn2Wju6PuypdukZAFK",
-        "version": "7"
+        "version": "0",
+        "developmentMode": true
       },
       {
         "userSymbol": "bmLibraryReporter",
