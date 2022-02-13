@@ -1,5 +1,5 @@
 # Google Apps Script Project: testBmCrypter
-This repo (testBmCrypter) was automatically updated on 2/10/2022, 5:32:30 PM by GasGit
+This repo (testBmCrypter) was automatically updated on 2/13/2022, 3:37:09 PM by GasGit
 
 For more information on gasgit, see the [desktop liberation site](https://ramblings.mcpher.com/drive-sdk-and-github/migrategasgit/ "desktop liberation")
 
@@ -17,12 +17,10 @@ The shared link for [testBmCrypter is here](https://script.google.com/d/1VnWXCYl
 --- | --- 
 appsscript| json
 runner| server_js
-Trackmyself| server_js
 ### Directly referenced libraries
 *library*|*identifier*|*key*|*version*|*dev mode*|*source*|
 --- | --- | --- | --- | --- | --- 
 bmCrypter| bmCrypter|1cBN2gAhvhG4vQTPL04V363DaL19TbHRMydR1pVfn2Wju6PuypdukZAFK|0|no|[here](libraries/bmCrypter "library source")
-bmLibraryReporter| bmLibraryReporter|1D_lWK-jU53wxMA2-NxSjiyu7Uze_GDDqBKTsQnCgPhyUmmSLv0bfTNPX|14|no|[here](libraries/bmLibraryReporter "library source")
 bmPreFiddler| bmPreFiddler|13JUFGY18RHfjjuKmIRRfvmGlCYrEkEtN6uUm-iLUcxOUFRJD-WBX-tkR|30|no|[here](libraries/bmPreFiddler "library source")
 ### All dependencies and sub dependencies
 *library*|*identifier*|*key*|*version*|*dev mode*|*source*|
