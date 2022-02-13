@@ -15,7 +15,7 @@ const clone = {
 
 
 const runnerEncrypt = () => {
-  Trackmyself.stamp()
+
 
   // create a new spreadsheet, cloning each of the masters, and encrypting the given columns
   const clone = {
