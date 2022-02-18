@@ -18,8 +18,10 @@ const runnerEncrypt = () => {
 
 
   // create a new spreadsheet, cloning each of the masters, and encrypting the given columns
+  const spreadsheet = SpreadsheetApp.create('clone')
+  console.log('created new spreadsheet ', spreadsheet.getId())
   const clone = {
-    id: '1lNLIpJwvz_GllYnloVBX02vOomZ68cP4Y2KZoPyi7Gg',
+    id: spreadsheet.getId(),
     // will create any missing sheets (but the spreadsheet must exist)
     createIfMissing: true,
     // this method generates a new public key for the spreadsheet
@@ -58,6 +60,12 @@ const runnerEncrypt = () => {
       }
     }]
   }]
+  // if this is specified it'll also add a container bound project
+  const containerProject = {
+    // this is the bmCrypter Addon key
+    scriptId: '1Byrtnr_uuAt3BiZ6_qh6T8vBZq-YdgnDaqoJ64Ss7kM4q2XE-XGPcmCi',
+    title: 'bmCrypterAddon: cloned by bmImportScript'
+  }
 
   const settings = {
     masters,
@@ -70,10 +78,22 @@ const runnerEncrypt = () => {
 
   // these can be distributed to those with accesss
   console.log(JSON.stringify(privateKeys, null, '\t'))
+
+  // now add some code to the sheet!
+  if (containerProject) {
+    const container = cloneSheetProject({
+      scriptId: containerProject.scriptId,
+      parentId: clone.id,
+      title: containerProject.title
+    })
+    console.log(`created container project ${container.data.scriptId} (${container.data.title})`)
+  }
 }
 
 const runnerPlain = () => {
   Trackmyself.stamp()
+
+
   const clone = {
     id: '1lNLIpJwvz_GllYnloVBX02vOomZ68cP4Y2KZoPyi7Gg',
     // will create any missing sheets (but the spreadsheet must exist)
@@ -115,6 +135,46 @@ const runnerPlain = () => {
   }
   bmCrypter.newCrypter({ settings }).exec()
 
+}
+
+const cloneSheetProject = ({ scriptId, parentId, title }) => {
+
+  // get a sapi instance
+  const sapi = bmImportScript.newScriptApi({
+    tokenService: ScriptApp.getOAuthToken,
+    fetcher: UrlFetchApp.fetch
+  })
+
+  // get the files from the source project 
+  // and its source - including its manifest
+  const project = sapi.getProjectContent({
+    scriptId
+  })
+
+  if (!project.success) {
+    console.log(project)
+    throw project.extended
+  }
+
+  // create a new container bound project
+  const source = sapi.createProject({
+    title,
+    parentId
+  })
+
+  // add the files to the newly created project, overwriting the default manifest
+  sapi.addFiles({
+    scriptId: source.data.scriptId,
+    files: project.data.files,
+    collision: 'replace'
+  })
+
+  if (!source.success) {
+    console.log(source)
+    throw source.extended
+  }
+
+  return source
 }
 
 // decrypter
