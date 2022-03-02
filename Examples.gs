@@ -9,8 +9,6 @@ const cloneProject = () => {
   const sapi = bmImportScript.newScriptApi({
     tokenService: ScriptApp.getOAuthToken,
     fetcher: UrlFetchApp.fetch,
-    // we don't really need cache here so i won't bother
-    cacheStore: null
   })
 
   // get the project we'll clone
@@ -48,9 +46,7 @@ const cloneContainerProject = () => {
   // get a sapi instance
   const sapi = bmImportScript.newScriptApi({
     tokenService: ScriptApp.getOAuthToken,
-    fetcher: UrlFetchApp.fetch,
-    // we don't really need cache here so i won't bother
-    cacheStore: null
+    fetcher: UrlFetchApp.fetch
   })
 
   // get the project we'll clone
@@ -145,7 +141,7 @@ const mergeSelectedFiles = () => {
   const sapi = bmImportScript.newScriptApi({
     tokenService: ScriptApp.getOAuthToken,
     fetcher: UrlFetchApp.fetch,
-    cacheStore: CacheService.getUserCache()
+    cacheStore: CacheService.getUserCache(),
   })
   const SOURCE_ID = '1LKm0bAC7d7KRD958B2B4bcjJ4o1sCwYZAu95s_vV0zSWy0A37BVGIUJH'
   const TARGET_ID = '1VnWXCYlxxlg7AAk0YgMAvx2Fy-7RJuq2JJCvA-1obHRD6s_nCUTwClxT'
