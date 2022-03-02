@@ -7,7 +7,8 @@
       {
         "userSymbol": "bmCrypter",
         "libraryId": "1cBN2gAhvhG4vQTPL04V363DaL19TbHRMydR1pVfn2Wju6PuypdukZAFK",
-        "version": "10"
+        "version": "10",
+        "developmentMode": false
       },
       {
         "userSymbol": "bmPreFiddler",
@@ -17,12 +18,14 @@
       {
         "userSymbol": "bmCrusher",
         "libraryId": "1nbx8f-kt1rw53qbwn4SO2nKaw9hLYl5OI3xeBgkBC7bpEdWKIPBDkVG0",
-        "version": "19"
+        "version": "19",
+        "developmentMode": false
       },
       {
         "userSymbol": "bmImportScript",
+        "version": "2",
         "libraryId": "1LKm0bAC7d7KRD958B2B4bcjJ4o1sCwYZAu95s_vV0zSWy0A37BVGIUJH",
-        "version": "3"
+        "developmentMode": false
       }
     ]
   },
